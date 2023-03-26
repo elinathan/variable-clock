@@ -56,14 +56,3 @@ span#no-wrap {
   background: black;
   /* WebKit/Blink Browsers */
 }
-
-#blend {
-  position: absolute;
-  top: 300px;
-  left: 300px;
-  width: 300px;
-  height: 150px;
-  mix-blend-mode: difference;
-  background-color: #009600;
-
-}
