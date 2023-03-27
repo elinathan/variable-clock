@@ -20,20 +20,27 @@ updateTimeInTitle();
 // Set the frame rate to 4 frames per second
 const frameRate = 4;
 
-function draw() {
+function updateTime() {
   // Update the time and date display
   time.innerHTML = timeString(false);
   dateTime.innerHTML = displayTime(timeString(true));
 
+  // Schedule the next time update
+  setTimeout(updateTime, 1000 / frameRate);
+}
+
+function updateWidth() {
   // Adjust the font width based on the window dimensions
   const fontWidth = 350 * window.innerWidth / window.innerHeight;
   time.style.fontVariationSettings = `'wdth' ${fontWidth}`;
 
-  // Schedule the next frame
-  setTimeout(draw, 1000 / frameRate);
+  // Schedule the next width update
+  requestAnimationFrame(updateWidth);
 }
 
-draw();
+// Start the update loops
+updateTime();
+updateWidth();
 
 function timeString(isSmall) {
   const now = new Date();
