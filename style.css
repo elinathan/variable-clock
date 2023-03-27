@@ -42,9 +42,10 @@ p {
 }
 
 span#ordinal {
-  font-size: calc(max(24px, 5vh) * 0.7);
+  font-size: calc(max(24px, 5vh) * 0.8);
   position: relative;
-  top: -0.5em;
+  top: -0.4em;
+  padding-left: 2px;
 }
 
 span#no-wrap {
